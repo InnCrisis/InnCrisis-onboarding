@@ -36,7 +36,11 @@ app.configure ->
 
 
 app.get '/', (req, res)->
-  res.render 'index.html'
+  res.render 'index.html', index:true
+app.get '/about', (req, res)->
+  res.render 'about.html', about:true
+app.get '/contact', (req, res)->
+  res.render 'contact.html', contact:true
 
 app.use (req, res)->
   res.status 404
